@@ -8,8 +8,9 @@
         "build": "storybook build"
     },
     "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "author": "LinkZap @ https://linkzap.ai",
+    "private": false,
+    "license": "MIT",
     "devDependencies": {
         "@babel/preset-env": "^7.22.5",
         "@babel/preset-react": "^7.22.5",
