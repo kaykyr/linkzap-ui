@@ -6,9 +6,7 @@ const config = {
         "@storybook/addon-essentials",
         "@storybook/addon-interactions",
         "@storybook/preset-create-react-app",
-        {
-            name: '@storybook/addon-styling',
-        },
+        "@storybook/addon-styling",
     ],
     framework: "@storybook/react-vite",
     core: {
