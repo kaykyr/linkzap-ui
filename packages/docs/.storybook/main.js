@@ -9,7 +9,7 @@ const config = {
         {
             name: '@storybook/addon-styling',
         },
-        "storybook-tailwind-dark-mode"
+        "storybook-tailwind-dark-mode",
     ],
     framework: "@storybook/react-vite",
     core: {

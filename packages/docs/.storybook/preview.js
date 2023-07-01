@@ -2,6 +2,9 @@
 
 import { withThemeByDataAttribute } from '@storybook/addon-styling'
 import 'tailwindcss/tailwind.css'
+import 'tailwindcss/screens.css'
+import 'tailwindcss/utilities.css'
+import 'tailwindcss/variants.css'
 
 export const decorators = [
     withThemeByDataAttribute({
