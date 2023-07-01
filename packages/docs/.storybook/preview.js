@@ -1,7 +1,7 @@
 /** @type { import('@storybook/react').Preview } */
 
 import { withThemeByDataAttribute } from '@storybook/addon-styling'
-import './global.css'
+import 'tailwindcss/tailwind.css'
 
 export const decorators = [
     withThemeByDataAttribute({
