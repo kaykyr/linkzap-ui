@@ -2,6 +2,7 @@
     "name": "linkzap-ui",
     "private": false,
     "license": "MIT",
+    "author": "LinkZap @ https://linkzap.ai",
     "workspaces": [
         "packages/*",
         "./packages/*"
