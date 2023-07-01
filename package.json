@@ -1,6 +1,7 @@
 {
     "name": "linkzap-ui",
-    "private": true,
+    "private": false,
+    "license": "MIT",
     "workspaces": [
         "packages/*",
         "./packages/*"
