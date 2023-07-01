@@ -3,4 +3,11 @@ package-lock.json
 yarn.lock
 yarn-error.log
 ./packages/react/dist/*
+./packages/react/dist
+packages/react/dist
 ./packages/tokens/dist/*
+./packages/tokens/dist
+packages/tokens/dist
+./dist
+dist
+dist/*
