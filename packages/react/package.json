@@ -27,7 +27,6 @@
     },
     "dependencies": {
         "@linkzap-ui/eslint-config": "*",
-        "@linkzap-ui/tokens": "*",
         "@linkzap-ui/ts-config": "*",
         "react": "^18.2.0"
     }

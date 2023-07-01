@@ -25,8 +25,6 @@
         "@storybook/react-webpack5": "^7.0.24",
         "@storybook/testing-library": "^0.0.14-next.2",
         "@vitejs/plugin-react": "^4.0.1",
-        "autoprefixer": "^10.4.14",
-        "postcss": "^8.4.24",
         "prop-types": "^15.8.1",
         "storybook": "^7.0.24",
         "storybook-tailwind-dark-mode": "^1.0.22",
@@ -35,11 +33,12 @@
     "dependencies": {
         "@linkzap-ui/eslint-config": "*",
         "@linkzap-ui/react": "*",
-        "@linkzap-ui/tokens": "*",
         "@linkzap-ui/ts-config": "*",
         "@nrwl/next": "^16.4.2",
         "@storybook/preset-create-react-app": "^7.0.24",
         "react": "^18.2.0",
+        "postcss": "^8.4.24",
+        "autoprefixer": "^10.4.14",
         "react-dom": "^18.2.0",
         "tailwindcss": "^3.3.2"
     }
