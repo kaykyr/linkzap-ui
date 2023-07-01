@@ -1,5 +1,5 @@
-export const Button = ({ children }: any) => (
-    <button className="flex justify-center w-[150px] h-[40px] bg-blue-500 rounded hover:opacity-75 transition-opacity duration-300 p-5">
-        <span className="text-white">Teste: {children}</span>
+export const Button = () => (
+    <button className="flex w-[150px] justify-center rounded bg-blue-500 p-2 transition-opacity duration-300 hover:opacity-75">
+        <span className="text-white">Teste</span>
     </button>
 )
