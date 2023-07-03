@@ -3,14 +3,23 @@ import { Button, ButtonProps } from '@linkzap-ui/react'
 
 export default {
     title: 'Button',
+    disabled: false,
+    size: 'auto',
+    color: 'primary',
     component: Button,
 } as Meta<ButtonProps>
+
+export const Disabled: StoryObj<ButtonProps> = {
+    args: {
+        children: 'Button',
+        disabled: true,
+        color: 'primary',
+    },
+}
 
 export const Primary: StoryObj<ButtonProps> = {
     args: {
         children: 'Button',
-        disabled: false,
-        size: 'small',
         color: 'primary',
     },
 }
@@ -18,8 +27,6 @@ export const Primary: StoryObj<ButtonProps> = {
 export const Success: StoryObj<ButtonProps> = {
     args: {
         children: 'Button',
-        disabled: false,
-        size: 'small',
         color: 'success',
     },
 }
@@ -27,8 +34,6 @@ export const Success: StoryObj<ButtonProps> = {
 export const Danger: StoryObj<ButtonProps> = {
     args: {
         children: 'Button',
-        disabled: false,
-        size: 'small',
         color: 'danger',
     },
 }
@@ -36,8 +41,6 @@ export const Danger: StoryObj<ButtonProps> = {
 export const Warning: StoryObj<ButtonProps> = {
     args: {
         children: 'Button',
-        disabled: false,
-        size: 'small',
         color: 'warning',
     },
 }
@@ -45,17 +48,14 @@ export const Warning: StoryObj<ButtonProps> = {
 export const Dark: StoryObj<ButtonProps> = {
     args: {
         children: 'Button',
-        disabled: false,
-        size: 'small',
         color: 'dark',
     },
 }
 
-export const LightGrey: StoryObj<ButtonProps> = {
+export const FullWidth: StoryObj<ButtonProps> = {
     args: {
         children: 'Button',
-        disabled: false,
-        size: 'small',
-        color: 'lightGrey',
+        size: 'w-full',
+        color: 'primary',
     },
 }

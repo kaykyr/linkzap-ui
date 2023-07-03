@@ -18,6 +18,7 @@ module.exports = {
                 'accent-3': '#FF98E5',
                 'chart-primary-1': '#FF7A68',
                 'chart-primary-2': '#3DBAA2',
+                light: '#808191',
             },
             fontSize: {
                 xss: '0.625rem',
