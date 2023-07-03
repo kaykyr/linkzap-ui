@@ -34,6 +34,27 @@ var __objRest = (source, exclude) => {
 import { jsx } from "react/jsx-runtime";
 var Banner = () => /* @__PURE__ */ jsx("div", {});
 
+// ../../node_modules/clsx/dist/clsx.m.js
+function r(e) {
+  var t, f, n = "";
+  if ("string" == typeof e || "number" == typeof e)
+    n += e;
+  else if ("object" == typeof e)
+    if (Array.isArray(e))
+      for (t = 0; t < e.length; t++)
+        e[t] && (f = r(e[t])) && (n && (n += " "), n += f);
+    else
+      for (t in e)
+        e[t] && (n && (n += " "), n += t);
+  return n;
+}
+function clsx() {
+  for (var e, t, f = 0, n = ""; f < arguments.length; )
+    (e = arguments[f++]) && (t = r(e)) && (n && (n += " "), n += t);
+  return n;
+}
+var clsx_m_default = clsx;
+
 // src/Button/index.tsx
 import { jsx as jsx2 } from "react/jsx-runtime";
 var Button = (_a) => {
@@ -53,10 +74,33 @@ var Button = (_a) => {
   return /* @__PURE__ */ jsx2(
     "button",
     __spreadProps(__spreadValues({
-      className: `flex justify-center rounded bg-${color || "primary"} p-2 transition-opacity duration-300 hover:opacity-75 ${className}`,
+      className: clsx_m_default(
+        `font-secondary flex justify-center rounded p-2 text-sm font-semibold transition-opacity duration-300 hover:opacity-75 ${className}`,
+        {
+          "w-full": size === "w-full",
+          "bg-lightGrey": disabled === true,
+          "bg-primary": color === "primary" && !disabled,
+          "bg-success": color === "success" && !disabled,
+          "bg-danger": color === "danger" && !disabled,
+          "bg-warning": color === "warning" && !disabled,
+          "bg-dark": color === "dark" && !disabled,
+          "bg-light": color === "lightGrey" && !disabled,
+          "bg-white": color === "white" && !disabled,
+          "cursor-not-allowed": disabled
+        }
+      ),
       disabled
     }, rest), {
-      children: /* @__PURE__ */ jsx2("span", { className: "text-white", children })
+      children: /* @__PURE__ */ jsx2(
+        "span",
+        {
+          className: clsx_m_default("", {
+            "text-white": !color,
+            "text-light": color === "lightGrey" || disabled || color === "white"
+          }),
+          children
+        }
+      )
     })
   );
 };
@@ -69,19 +113,82 @@ var Card = () => /* @__PURE__ */ jsx3("div", {});
 import { jsx as jsx4 } from "react/jsx-runtime";
 var Chart = () => /* @__PURE__ */ jsx4("div", {});
 
-// src/Input/InputSearch.tsx
+// src/Icons/SearchIcon.tsx
 import { jsx as jsx5 } from "react/jsx-runtime";
-var InputSearch = () => /* @__PURE__ */ jsx5("input", { type: "search" });
+var SearchIcon = ({
+  color,
+  className
+}) => /* @__PURE__ */ jsx5(
+  "svg",
+  {
+    width: "20",
+    height: "20",
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: /* @__PURE__ */ jsx5(
+      "path",
+      {
+        className,
+        fillRule: "evenodd",
+        clipRule: "evenodd",
+        d: "M9.61154 0C4.30323 0 0 4.20819 0 9.39926C0 14.5903 4.30323 18.7985 9.61154 18.7985C11.8819 18.7985 13.9684 18.0287 15.613 16.7415L18.7371 19.7886L18.8202 19.8586C19.1102 20.0685 19.5214 20.0446 19.7839 19.7873C20.0726 19.5043 20.072 19.0459 19.7825 18.7636L16.6952 15.7523C18.2649 14.0794 19.2231 11.8487 19.2231 9.39926C19.2231 4.20819 14.9198 0 9.61154 0ZM9.61154 1.44774C14.1022 1.44774 17.7426 5.00776 17.7426 9.39926C17.7426 13.7908 14.1022 17.3508 9.61154 17.3508C5.12086 17.3508 1.48044 13.7908 1.48044 9.39926C1.48044 5.00776 5.12086 1.44774 9.61154 1.44774Z",
+        fill: color || "#11142D"
+      }
+    )
+  }
+);
+
+// src/Input/InputSearch.tsx
+import { jsx as jsx6, jsxs } from "react/jsx-runtime";
+var InputSearch = ({
+  color,
+  iconColor,
+  className,
+  disabled
+}) => /* @__PURE__ */ jsxs(
+  "div",
+  {
+    className: clsx_m_default(
+      `
+                flex
+                flex-row
+                items-center
+                justify-center
+                rounded-xl
+                px-6
+                py-4
+                ${className}
+            `,
+      {
+        "bg-transparent": color === "transparent" && !disabled,
+        "bg-lightGrey": color === "lightGrey" || !color || disabled,
+        "cursor-not-allowed": disabled
+      }
+    ),
+    children: [
+      /* @__PURE__ */ jsx6(
+        "input",
+        {
+          className: "\n                bg-transparent\n                placeholder:text-sm\n                placeholder:font-bold\n            ",
+          type: "search",
+          placeholder: "Pesquisar"
+        }
+      ),
+      /* @__PURE__ */ jsx6(SearchIcon, { color: iconColor })
+    ]
+  }
+);
 
 // src/List/index.tsx
-import { jsx as jsx6 } from "react/jsx-runtime";
-var List = () => /* @__PURE__ */ jsx6("div", {});
+import { jsx as jsx7 } from "react/jsx-runtime";
+var List = () => /* @__PURE__ */ jsx7("div", {});
 
 // src/Navigation/TopNav.tsx
-import { jsx as jsx7, jsxs } from "react/jsx-runtime";
-var TopNav = () => /* @__PURE__ */ jsx7("div", { className: "w-full", children: /* @__PURE__ */ jsxs("div", { className: "mt-12 flex h-12 flex-row items-center justify-between", children: [
-  /* @__PURE__ */ jsx7(InputSearch, {}),
-  /* @__PURE__ */ jsx7("div", { className: "flex flex-row items-center justify-between" })
+import { jsx as jsx8, jsxs as jsxs2 } from "react/jsx-runtime";
+var TopNav = () => /* @__PURE__ */ jsx8("div", { className: "w-full", children: /* @__PURE__ */ jsxs2("div", { className: "mt-12 flex h-12 flex-row items-center justify-between", children: [
+  /* @__PURE__ */ jsx8(InputSearch, { color: "transparent" }),
+  /* @__PURE__ */ jsx8("div", { className: "flex flex-row items-center justify-between" })
 ] }) });
 export {
   Banner,

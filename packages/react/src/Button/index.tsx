@@ -1,4 +1,5 @@
 import React from 'react'
+import clsx from 'clsx'
 
 export interface ButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -11,7 +12,7 @@ export interface ButtonProps
         | 'dark'
         | 'lightGrey'
         | 'white'
-    size?: 'small' | 'medium' | 'large' | 'w-full'
+    size?: 'auto' | 'w-full'
     className?: string
     disabled?: boolean
 }
@@ -25,12 +26,32 @@ export const Button = ({
     ...rest
 }: ButtonProps) => (
     <button
-        className={`flex justify-center rounded bg-${
-            color || 'primary'
-        } p-2 transition-opacity duration-300 hover:opacity-75 ${className}`}
+        className={clsx(
+            `font-secondary flex justify-center rounded p-2 text-sm font-semibold transition-opacity duration-300 hover:opacity-75 ${className}`,
+            {
+                'w-full': size === 'w-full',
+                'bg-lightGrey': disabled === true,
+                'bg-primary': color === 'primary' && !disabled,
+                'bg-success': color === 'success' && !disabled,
+                'bg-danger': color === 'danger' && !disabled,
+                'bg-warning': color === 'warning' && !disabled,
+                'bg-dark': color === 'dark' && !disabled,
+                'bg-light': color === 'lightGrey' && !disabled,
+                'bg-white': color === 'white' && !disabled,
+                'cursor-not-allowed': disabled,
+            },
+        )}
         disabled={disabled}
         {...rest}
     >
-        <span className="text-white">{children}</span>
+        <span
+            className={clsx('', {
+                'text-white': !color,
+                'text-light':
+                    color === 'lightGrey' || disabled || color === 'white',
+            })}
+        >
+            {children}
+        </span>
     </button>
 )
