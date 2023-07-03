@@ -53,7 +53,7 @@ var Button = (_a) => {
   return /* @__PURE__ */ jsx2(
     "button",
     __spreadProps(__spreadValues({
-      className: `flex w-[150px] justify-center rounded bg-${color || "primary"} p-2 transition-opacity duration-300 hover:opacity-75 ${className}`,
+      className: `flex justify-center rounded bg-${color || "primary"} p-2 transition-opacity duration-300 hover:opacity-75 ${className}`,
       disabled
     }, rest), {
       children: /* @__PURE__ */ jsx2("span", { className: "text-white", children })

@@ -22,4 +22,4 @@ declare const List: () => react_jsx_runtime.JSX.Element;
 
 declare const TopNav: () => react_jsx_runtime.JSX.Element;
 
-export { Banner, Button, Card, Chart, InputSearch, List, TopNav };
+export { Banner, Button, ButtonProps, Card, Chart, InputSearch, List, TopNav };

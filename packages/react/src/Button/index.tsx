@@ -1,6 +1,7 @@
 import React from 'react'
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+    extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode
     color?:
         | 'primary'
@@ -24,7 +25,7 @@ export const Button = ({
     ...rest
 }: ButtonProps) => (
     <button
-        className={`flex w-[150px] justify-center rounded bg-${
+        className={`flex justify-center rounded bg-${
             color || 'primary'
         } p-2 transition-opacity duration-300 hover:opacity-75 ${className}`}
         disabled={disabled}

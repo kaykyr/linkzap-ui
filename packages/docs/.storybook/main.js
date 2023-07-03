@@ -8,16 +8,21 @@ const config = {
         "@storybook/preset-create-react-app",
         {
             name: '@storybook/addon-styling',
+            options: {
+                // Check out https://github.com/storybookjs/addon-styling/blob/main/docs/api.md
+                // For more details on this addon's options.
+                postCss: true,
+            },
         },
         "storybook-tailwind-dark-mode",
     ],
-    framework: "@storybook/react-vite",
-    core: {
-        builder: "@storybook/builder-vite"
-    },
-    features: {
-        storyStoreV7: true,
-    }
+    framework: { name: "@storybook/react-vite", options: {} },
+    // core: {
+    //     builder: "@storybook/builder-vite"
+    // },
+    // features: {
+    //     storyStoreV7: true,
+    // }
 }
 
 export default config
