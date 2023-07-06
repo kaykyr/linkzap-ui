@@ -136,7 +136,7 @@ var Button = (_a) => {
 
 // src/Card/index.tsx
 var import_jsx_runtime3 = require("react/jsx-runtime");
-var Card = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", {});
+var Card = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "bg-[#373737] p-10 text-black", children: "Alguma coisa" });
 
 // src/Chart/index.tsx
 var import_jsx_runtime4 = require("react/jsx-runtime");

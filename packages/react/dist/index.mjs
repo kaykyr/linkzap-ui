@@ -107,7 +107,7 @@ var Button = (_a) => {
 
 // src/Card/index.tsx
 import { jsx as jsx3 } from "react/jsx-runtime";
-var Card = () => /* @__PURE__ */ jsx3("div", {});
+var Card = () => /* @__PURE__ */ jsx3("div", { className: "bg-[#373737] p-10 text-black", children: "Alguma coisa" });
 
 // src/Chart/index.tsx
 import { jsx as jsx4 } from "react/jsx-runtime";
