@@ -30,10 +30,6 @@ var __objRest = (source, exclude) => {
   return target;
 };
 
-// src/Banner/index.tsx
-import { jsx } from "react/jsx-runtime";
-var Banner = () => /* @__PURE__ */ jsx("div", {});
-
 // ../../node_modules/clsx/dist/clsx.m.js
 function r(e) {
   var t, f, n = "";
@@ -56,7 +52,7 @@ function clsx() {
 var clsx_m_default = clsx;
 
 // src/Button/index.tsx
-import { jsx as jsx2 } from "react/jsx-runtime";
+import { jsx } from "react/jsx-runtime";
 var Button = (_a) => {
   var _b = _a, {
     children,
@@ -71,7 +67,7 @@ var Button = (_a) => {
     "className",
     "disabled"
   ]);
-  return /* @__PURE__ */ jsx2(
+  return /* @__PURE__ */ jsx(
     "button",
     __spreadProps(__spreadValues({
       className: clsx_m_default(
@@ -91,7 +87,7 @@ var Button = (_a) => {
       ),
       disabled
     }, rest), {
-      children: /* @__PURE__ */ jsx2(
+      children: /* @__PURE__ */ jsx(
         "span",
         {
           className: clsx_m_default("", {
@@ -106,19 +102,15 @@ var Button = (_a) => {
 };
 
 // src/Card/index.tsx
-import { jsx as jsx3 } from "react/jsx-runtime";
-var Card = () => /* @__PURE__ */ jsx3("div", { className: "bg-[#373737] p-10 text-black", children: "Alguma coisa" });
-
-// src/Chart/index.tsx
-import { jsx as jsx4 } from "react/jsx-runtime";
-var Chart = () => /* @__PURE__ */ jsx4("div", {});
+import { jsx as jsx2 } from "react/jsx-runtime";
+var Card = () => /* @__PURE__ */ jsx2("div", { className: "bg-[#373737] p-10 text-black", children: "Alguma coisa" });
 
 // src/Icons/SearchIcon.tsx
-import { jsx as jsx5 } from "react/jsx-runtime";
+import { jsx as jsx3 } from "react/jsx-runtime";
 var SearchIcon = ({
   color,
   className
-}) => /* @__PURE__ */ jsx5(
+}) => /* @__PURE__ */ jsx3(
   "svg",
   {
     width: "20",
@@ -126,7 +118,7 @@ var SearchIcon = ({
     viewBox: "0 0 20 20",
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg",
-    children: /* @__PURE__ */ jsx5(
+    children: /* @__PURE__ */ jsx3(
       "path",
       {
         className,
@@ -140,7 +132,7 @@ var SearchIcon = ({
 );
 
 // src/Input/InputSearch.tsx
-import { jsx as jsx6, jsxs } from "react/jsx-runtime";
+import { jsx as jsx4, jsxs } from "react/jsx-runtime";
 var InputSearch = ({
   color,
   iconColor,
@@ -167,7 +159,7 @@ var InputSearch = ({
       }
     ),
     children: [
-      /* @__PURE__ */ jsx6(
+      /* @__PURE__ */ jsx4(
         "input",
         {
           className: "\n                bg-transparent\n                placeholder:text-sm\n                placeholder:font-bold\n            ",
@@ -175,27 +167,83 @@ var InputSearch = ({
           placeholder: "Pesquisar"
         }
       ),
-      /* @__PURE__ */ jsx6(SearchIcon, { color: iconColor })
+      /* @__PURE__ */ jsx4(SearchIcon, { color: iconColor })
     ]
   }
 );
 
-// src/List/index.tsx
-import { jsx as jsx7 } from "react/jsx-runtime";
-var List = () => /* @__PURE__ */ jsx7("div", {});
+// src/Input/InputSelect.tsx
+import { useState } from "react";
+import { jsx as jsx5, jsxs as jsxs2 } from "react/jsx-runtime";
+var Select = ({
+  label,
+  className,
+  children,
+  defaultValue,
+  handler
+}) => {
+  const [isVisible, setIsVisible] = useState(false);
+  return /* @__PURE__ */ jsxs2(
+    "div",
+    {
+      className: clsx_m_default(`mb-4 w-full ${className}`),
+      onClick: () => setIsVisible(!isVisible),
+      children: [
+        /* @__PURE__ */ jsx5("div", { className: "text-darkBlue mb-4 text-xs font-semibold leading-5", children: label }),
+        /* @__PURE__ */ jsxs2(
+          "div",
+          {
+            "data-visible": isVisible,
+            className: "\n                    data-[visible=true]:bg-bgContrast\n                    data-[visible=false]:bg-bg\n\n                    relative\n                    float-none\n                    h-[50px]\n                    w-full\n                    cursor-pointer\n                    rounded-lg\n                    border-none\n                    font-medium\n                    leading-10\n                    shadow-md\n                    transition-all\n                    duration-200\n\n                    before:absolute\n                    before:right-4\n                    before:mt-7\n                    before:h-4\n                    before:w-3\n                    before:content-none\n                ",
+            children: [
+              /* @__PURE__ */ jsx5(
+                "div",
+                {
+                  className: "\n                        overflow-hidden\n                        overflow-ellipsis\n                        whitespace-nowrap\n                        text-gray-300\n                    ",
+                  style: {
+                    maxWidth: "calc(100% - 46px)"
+                  },
+                  children: /* @__PURE__ */ jsx5("span", { className: "overflow-hidden overflow-ellipsis whitespace-nowrap px-4 py-0 text-gray-300", children: label })
+                }
+              ),
+              /* @__PURE__ */ jsxs2(
+                "ul",
+                {
+                  className: "\n                        relative\n                        left-0\n                        right-0\n                        z-10\n                        mt-1\n                        max-h-[300px]\n                        overflow-hidden\n                        overflow-y-auto\n                        border\n                        border-solid\n                        border-gray-600\n                        p-6\n                        px-5\n                        py-3\n                        shadow-md\n                        group-[data-[visible=true]]:block\n                        group-[data-[visible=false]]:hidden\n                    ",
+                  children: [
+                    /* @__PURE__ */ jsx5(Option, { value: "1", children: "Teste 1" }),
+                    /* @__PURE__ */ jsx5(Option, { value: "2", children: "Teste 2" }),
+                    /* @__PURE__ */ jsx5(Option, { value: "3", children: "Teste 3" })
+                  ]
+                }
+              )
+            ]
+          }
+        )
+      ]
+    }
+  );
+};
+var Option = ({ label, value }) => /* @__PURE__ */ jsx5(
+  "li",
+  {
+    className: "\n            hover:text-primary\n            relative\n            text-gray-200\n            opacity-70\n            transition-all\n\n            duration-200\n            before:absolute\n            before:-ml-4\n            before:mt-6\n            before:h-3\n\n            before:w-3\n            before:transition-opacity\n            before:duration-200\n            before:content-none\n            hover:cursor-pointer\n            hover:opacity-100\n\n            hover:transition-all\n            hover:duration-200\n        ",
+    "data-value": value,
+    children: label
+  }
+);
 
 // src/Navigation/TopNav.tsx
-import { jsx as jsx8, jsxs as jsxs2 } from "react/jsx-runtime";
-var TopNav = () => /* @__PURE__ */ jsx8("div", { className: "w-full", children: /* @__PURE__ */ jsxs2("div", { className: "mt-12 flex h-12 flex-row items-center justify-between", children: [
-  /* @__PURE__ */ jsx8(InputSearch, { color: "transparent" }),
-  /* @__PURE__ */ jsx8("div", { className: "flex flex-row items-center justify-between" })
+import { jsx as jsx6, jsxs as jsxs3 } from "react/jsx-runtime";
+var TopNav = () => /* @__PURE__ */ jsx6("div", { className: "w-full", children: /* @__PURE__ */ jsxs3("div", { className: "mt-12 flex h-12 flex-row items-center justify-between", children: [
+  /* @__PURE__ */ jsx6(InputSearch, { color: "transparent" }),
+  /* @__PURE__ */ jsx6("div", { className: "flex flex-row items-center justify-between" })
 ] }) });
 export {
-  Banner,
   Button,
   Card,
-  Chart,
   InputSearch,
-  List,
+  Option,
+  Select,
   TopNav
 };
